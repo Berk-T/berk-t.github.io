@@ -12,7 +12,6 @@ function addDoggo(){
         })
         .then(function(processPromise){
             if(processPromise.status === "success"){
-                console.log("hi")
                 kennel.src = processPromise.message
             }
             else{
