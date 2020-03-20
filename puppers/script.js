@@ -16,7 +16,7 @@ function addDoggo(){
                 kennel.src = processPromise.message
             }
             else{
-                kennel.src = "error-pupper.jpg"
+                kennel.src = "error-pupper.JPG"
             }
         })
 }
