@@ -3,7 +3,8 @@ const kennel = document.querySelector(".kennel")
 var breeds = document.querySelector(".dog-selector")
 
 function addDoggo(){
-    const DOGGO_URL = "https://dog.ceo/api/breed/" + breeds.options[breeds.selectedIndex].value + "/images/random"
+    var dogBreed = breeds.options[breeds.selectedIndex].value.replace('-','/')
+    const DOGGO_URL = "https://dog.ceo/api/breed/" + dogBreed + "/images/random"
     const promise = fetch(DOGGO_URL)
     promise
         .then(function(response){
