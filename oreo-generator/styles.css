@@ -30,6 +30,8 @@ body {
 }
 
 #name {
+  width: 500px;
+  overflow-wrap: break-word;
   font-family: Asap, sans-serif;
   color: white;
   font-size: 30pt;
