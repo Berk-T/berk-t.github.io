@@ -11,6 +11,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.png" />
     <script
       src="https://kit.fontawesome.com/35ea1c223a.js"
       crossorigin="anonymous"
@@ -65,7 +66,9 @@
 
     <script>
       var speechText = "OREO";
+      var buttonsDisabled = false;
       function randomize() {
+        if (buttonsDisabled) return;
         let maxLayers = 20;
         let minLayers = 1;
         let OLayerWeight = 0.5;
@@ -98,15 +101,17 @@
       }
 
       function speak() {
-        randomizeEnabled = false;
+        if (buttonsDisabled) return;
         still();
         beat();
         var msg = new SpeechSynthesisUtterance(speechText);
         msg.onend = function (event) {
+          buttonsDisabled = false;
           spin();
           stopBeating();
         };
         window.speechSynthesis.speak(msg);
+        buttonsDisabled = true;
       }
       function spin() {
         document.getElementById("randomize").classList.add("fa-spin");
