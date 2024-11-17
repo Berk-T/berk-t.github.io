@@ -15471,7 +15471,7 @@ async function checkWinLose(guess, tiles) {
         document.body.style.animation = "fadeOut 3s";
         await new Promise((r) => setTimeout(r, 2900));
         document.body.innerHTML =
-            '<video id="expanding-screen" src="https://drive.google.com/file/d/1rEzwVmmobl0E8mUu29jqH3tSxNv_UT94/preview" width="640" height="480" allow="autoplay"></video>';
+            "<video height='1080px' width='1920px' id='expanding-screen' autoplay='true' src='bensu.mp4' type='video/mp4'></video>";
         return;
     }
 
