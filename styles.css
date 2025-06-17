@@ -5,6 +5,7 @@
 html,
 body {
     overflow: hidden;
+    cursor: none; /* Hide the default cursor */
 }
 
 body {
