@@ -2,6 +2,11 @@
     color-scheme: dark;
 }
 
+html,
+body {
+    overflow: hidden;
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -87,3 +92,56 @@ body {
     font-weight: 700;
     font-style: italic;
 } */
+
+.icon-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.icon-btn {
+    display: flex;
+    align-items: center;
+    background: #222;
+    color: #fff;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: width 0.3s, background 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    width: 2.5rem; /* Collapsed width: just the icon */
+    min-width: 2.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.icon-btn svg {
+    flex-shrink: 0;
+    margin-right: 0;
+    transition: margin 0.3s;
+}
+
+.icon-btn .icon-label {
+    opacity: 0;
+    margin-left: 0.5rem;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.icon-btn:hover {
+    width: 8rem; /* Expanded width: icon + label */
+    background: #444;
+}
+
+.icon-btn:hover .icon-label {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon-btn:hover svg {
+    margin-right: 0.5rem;
+}
